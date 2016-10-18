@@ -28,6 +28,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.strictmode.visual=0 \
     persist.sys.strictmode.disable=1
 
+# no RIL
+PRODUCT_PROPERTY_OVERRIDES += \
+    keyguard.no_require_sim=1 \
+    ro.radio.use-ppp=no \
+    ro.config.nocheckin=yes \
+    ro.radio.noril=1 \
+    ro.carrier=wifi-only \
+    persist.radio.noril=1
+
 
 # GPS
 PRODUCT_COPY_FILES += \
