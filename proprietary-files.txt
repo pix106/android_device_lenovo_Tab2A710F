@@ -166,7 +166,7 @@ system/bin/ipod
 # gps
 system/lib/libcurl.so
 system/lib/libmnl.so
-
+system/xbin/mnld
 
 # Vendor
 # TODO : remove Ds and DSUI => removed 2016/10/18
