@@ -6,13 +6,11 @@ else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
-DEVICE_FOLDER := device/lenovo/Tab2A710F
-
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/lenovo/Tab2A710F/Tab2A710F-vendor.mk)
 
 # Device overlay
-DEVICE_PACKAGE_OVERLAYS += $(DEVICE_FOLDER)/overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Overlay Binaries
 $(call inherit-product, $(LOCAL_PATH)/overlay-binaries/overlay-binaries.mk)
@@ -36,7 +34,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.radio.noril=1 \
     ro.carrier=wifi-only \
     persist.radio.noril=1
-
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -91,7 +88,7 @@ PRODUCT_COPY_FILES += \
     #system/etc/permissions/platform.xml
     #system/etc/permissions/android.mediatek.tedongle.xml
 
-
+# media codecs files that are not copied from stock rom
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
 	$(LOCAL_PATH)/configs/media_codecs.xml:system/etc/permissions/media_codecs.xml \
@@ -125,8 +122,6 @@ PRODUCT_PACKAGES += \
 # root access
 PRODUCT_PACKAGES += \
 	su
-
-DEVICE_PACKAGE_OVERLAYS += device/lenovo/Tab2A710F/overlay
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_KERNEL):kernel
