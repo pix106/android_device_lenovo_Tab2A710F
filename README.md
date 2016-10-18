@@ -14,10 +14,13 @@ Camera  | VGA (Front-Facing)
 
 # Build
 
-* Working
 
-Everything
+Not Working
 
-* Not Working
+* Video recording with stock camera app
+* FM Radio
 
-Nothing
+
+Working
+
+* Everything else
