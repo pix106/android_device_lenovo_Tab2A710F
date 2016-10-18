@@ -16,7 +16,6 @@ system/bin/pq
 system/bin/thermal_manager
 system/bin/thermald
 system/bin/wmt_loader
-system/bin/wpa_supplicant
 system/lib/egl/libEGL_mali.so
 system/lib/egl/libGLESv1_CM_mali.so
 system/lib/egl/libGLESv2_mali.so
