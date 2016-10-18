@@ -162,7 +162,7 @@ system/lib/hw/gps.default.so
 #system/etc/factory.ini # not needed, commented 2016/10/08
 system/bin/logwrapper
 system/bin/ipod
-system/lib/libfmmt6620.so
+
 # gps
 system/lib/libcurl.so
 system/lib/libmnl.so
@@ -193,6 +193,7 @@ system/lib/libshowlogo.so
 #system/lib/libfmmt6627.so
 #system/lib/libfmjni.so
 #system/lib/libfmcust.so
+#system/lib/libfmmt6620.so
 
 
 # Firmware
