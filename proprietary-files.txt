@@ -158,10 +158,14 @@ system/lib/libwapi.so
 system/lib/hw/lights.default.so
 system/lib/hw/gps.default.so
 
-# added 2016/10/08
+# added 2016/10/08 - removed 2016/10/18
 #system/etc/factory.ini # not needed, commented 2016/10/08
-system/bin/logwrapper
-system/bin/ipod
+#system/bin/logwrapper
+#system/bin/ipod
+
+# added 2016/10/18
+system/bin/factory
+
 
 # gps
 system/lib/libcurl.so
