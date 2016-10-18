@@ -186,6 +186,9 @@ system/vendor/lib/mediadrm/libmockdrmcryptoplugin.so
 #system/vendor/lib/mediadrm/libplayreadydrmplugin.so
 system/vendor/lib/mediadrm/libwvdrmengine.so
 
+# 2016/10/17 Fix charging animation
+system/lib/libshowlogo.so
+
 
 # Firmware
 system/etc/firmware/ROMv2_patch_1_0_hdr.bin
