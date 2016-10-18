@@ -65,9 +65,14 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:system/etc/permissions/android.hardware.sensor.stepdetector.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
 
+
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
 	$(LOCAL_PATH)/configs/media_codecs.xml:system/etc/permissions/media_codecs.xml \
+	$(LOCAL_PATH)/configs/media_codecs_ffmpeg.xml:system/etc/permissions/media_codecs_ffmpeg.xml \
+	$(LOCAL_PATH)/configs/media_codecs_google_audio.xml:system/etc/permissions/media_codecs_google_audio.xml \
+	$(LOCAL_PATH)/configs/media_codecs_google_telephony.xml:system/etc/permissions/media_codecs_google_telephony.xml \
+	$(LOCAL_PATH)/configs/media_codecs_google_video.xml:system/etc/permissions/media_codecs_google_video.xml \
 	$(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 # Audio
