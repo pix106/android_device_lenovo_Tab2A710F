@@ -141,12 +141,11 @@ on init
     chown radio root /dev/mtgpio
 # / 16/01/2016
 
+# FM Radio device node (for tests)
+    chmod 0660 /dev/fm
+    chown system media /dev/fm
+
 # PixNDom fix end ##################
-
-
-
-
-
 
 #HWComposer Vsync
     chmod 0666 /dev/mtkfb_vsync
