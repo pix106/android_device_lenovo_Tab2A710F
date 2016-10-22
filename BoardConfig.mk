@@ -119,6 +119,9 @@ TARGET_LDPRELOAD += libxlog.so
 BOARD_SEPOLICY_DIRS := \
        device/lenovo/Tab2A710F/sepolicy
 
+# Hack for build
+$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
+
 #BOARD_SEPOLICY_UNION := \
 #        device.te \
 #        netd.te \
