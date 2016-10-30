@@ -194,6 +194,8 @@ system/lib/libsbccodec.so
 
 system/lib/libem_support_jni.so
 
+system/lib/libui_ext.so
+system/lib/libperfservicenative.so
 
 # 2016/10/17 Fix charging animation
 system/lib/libshowlogo.so
