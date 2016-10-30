@@ -192,6 +192,8 @@ system/lib/libmpodecoder.so
 system/lib/libdrmdecrypt.so
 system/lib/libsbccodec.so
 
+system/lib/libem_support_jni.so
+
 
 # 2016/10/17 Fix charging animation
 system/lib/libshowlogo.so
