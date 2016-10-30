@@ -120,9 +120,10 @@ system/lib/libvcodec_utility.so
 system/lib/libvcodecdrv.so
 system/lib/libvp8dec_sa.ca7.so
 system/lib/libvp9dec_sa.ca7.so
-
-# added files
 system/lib/libmp2dec_sa.ca7.so
+
+system/lib/hw/lights.default.so
+system/lib/hw/gps.default.so
 
 # used in init.aee.rc
 system/bin/aee_core_forwarder
@@ -136,6 +137,7 @@ system/bin/boot_logo_updater
 system/bin/sbchk
 system/bin/guiext-server
 system/bin/em_svr
+system/lib/libem_support_jni.so
 
 system/lib/libmtk_mmutils.so
 system/lib/libaudiodcrflt.so
@@ -151,18 +153,14 @@ system/lib/libMtkOmxRawDec.so
 system/lib/libMtkOmxGsmDec.so
 system/lib/libMtkOmxAdpcmDec.so
 system/lib/libdrmmtkwhitelist.so
-system/lib/libbluetoothdrv.so
+system/bin/MtkCodecService
+system/lib/libBnMtkCodec.so
+system/lib/libmpodecoder.so
+system/lib/libdrmdecrypt.so
+system/lib/libsbccodec.so
 system/lib/libwapi.so
 
-# added 2016/10/07
-system/lib/hw/lights.default.so
-system/lib/hw/gps.default.so
-
-system/etc/factory.ini
-system/bin/ipod
-
-# added 2016/10/18
-system/bin/factory
+system/lib/libbluetoothdrv.so
 
 
 # gps
@@ -185,20 +183,15 @@ system/vendor/lib/mediadrm/libmockdrmcryptoplugin.so
 system/vendor/lib/mediadrm/libwvdrmengine.so
 system/vendor/lib/drm/libdrmwvmplugin.so
 
-# codecs and drm
-system/bin/MtkCodecService
-system/lib/libBnMtkCodec.so
-system/lib/libmpodecoder.so
-system/lib/libdrmdecrypt.so
-system/lib/libsbccodec.so
-
-system/lib/libem_support_jni.so
-
+# misc
 system/lib/libui_ext.so
 system/lib/libperfservicenative.so
 
-# 2016/10/17 Fix charging animation
+# Related to charging animation
 system/lib/libshowlogo.so
+system/bin/factory
+system/etc/factory.ini
+system/bin/ipod
 
 # 2016/10/17 FM radio. partial and may not be needed. Commented for now
 #system/lib/libfmmt6628.so
@@ -206,7 +199,6 @@ system/lib/libshowlogo.so
 #system/lib/libfmjni.so
 #system/lib/libfmcust.so
 #system/lib/libfmmt6620.so
-
 
 # Firmware
 system/etc/firmware/ROMv2_patch_1_0_hdr.bin
@@ -235,11 +227,8 @@ system/etc/fmr/mt6627_fm_cust.cfg
 system/etc/audio_policy.conf
 system/etc/mtklog-config.prop
 system/etc/mtk_omx_core.cfg
-system/etc/bluetooth/bt_stack.conf
 system/etc/.tp/thermal.conf
 system/etc/.tp/thermal.off.conf
-#system/etc/media_codecs.xml    # removed 2016/10/18, do not use as blob
-
 
 
 ### PPP/RIL/... stock blobs, try it later, commented for now ==> to be checked ! TODO
