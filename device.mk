@@ -96,6 +96,11 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
 	$(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
+# Bluetooth config files
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/bluetooth/bt_did.conf:system/etc/bluetooth/bt_did.conf \
+    $(LOCAL_PATH)/configs/bluetooth/btconfig/xml:system/etc/bluetooth/btconfig.xml
+
 # Audio
 PRODUCT_PACKAGES += \
 	audio.a2dp.default
