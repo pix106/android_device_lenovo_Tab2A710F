@@ -75,7 +75,7 @@ COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD	# added 03/10/2016
 
 # Graphics
 USE_OPENGL_RENDERER := true
-BOARD_EGL_CFG := device/lenovo/Tab2A710F/egl.cfg
+BOARD_EGL_CFG := device/lenovo/Tab2A710F/configs/egl.cfg
 TARGET_USES_C2D_COMPOSITION := true     # added 03/10/2016
 TARGET_USES_OVERLAY := true     # added 03/10/2016
 TARGET_USES_ION := true     # added 03/10/2016
