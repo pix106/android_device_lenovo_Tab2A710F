@@ -171,9 +171,6 @@ system/lib/libmnl.so
 system/xbin/mnld
 
 # Vendor
-# TODO : remove Ds and DSUI => removed 2016/10/18
-#system/vendor/app/Ds/Ds.apk
-#system/vendor/app/DsUI/DsUI.apk
 system/vendor/lib/hw/audio.a2dp.blueangel.so
 system/vendor/lib/hw/bluetooth.blueangel.so
 system/vendor/lib/libstagefright_soft_ddpdec.so
@@ -226,8 +223,6 @@ system/etc/audio_policy.conf
 system/etc/mtklog-config.prop
 system/etc/mtk_omx_core.cfg
 system/etc/bluetooth/bt_stack.conf
-system/vendor/etc/audio_effects.conf
-system/vendor/etc/dolby/ds1-default.xml
 system/etc/.tp/thermal.conf
 system/etc/.tp/thermal.off.conf
 #system/etc/media_codecs.xml    # removed 2016/10/18, do not use as blob
