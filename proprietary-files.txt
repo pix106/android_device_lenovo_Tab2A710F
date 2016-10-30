@@ -219,9 +219,6 @@ system/etc/firmware/mt6627/mt6627_fm_v5_patch.bin
 
 
 # config files
-system/etc/wifi/p2p_supplicant_overlay.conf
-system/etc/wifi/wpa_supplicant.conf
-system/etc/wifi/wpa_supplicant_overlay.conf
 system/etc/mtk_omx_core.cfg
 system/etc/fmr/mt6627_fm_cust.cfg
 system/etc/audio_policy.conf

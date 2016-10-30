@@ -100,6 +100,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/bluetooth/bt_did.conf:system/etc/bluetooth/bt_did.conf \
     $(LOCAL_PATH)/configs/bluetooth/btconfig/xml:system/etc/bluetooth/btconfig.xml
 
+# Wifi config files
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+
+
 # Audio
 PRODUCT_PACKAGES += \
 	audio.a2dp.default
