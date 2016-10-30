@@ -98,7 +98,7 @@ PRODUCT_COPY_FILES += \
 # Bluetooth config files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/bluetooth/bt_did.conf:system/etc/bluetooth/bt_did.conf \
-    $(LOCAL_PATH)/configs/bluetooth/btconfig/xml:system/etc/bluetooth/btconfig.xml
+    $(LOCAL_PATH)/configs/bluetooth/btconfig.xml:system/etc/bluetooth/btconfig.xml
 
 # Wifi config files
 PRODUCT_COPY_FILES += \
