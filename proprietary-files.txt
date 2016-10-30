@@ -183,6 +183,7 @@ system/vendor/lib/libWVStreamControlAPI_L3.so
 system/vendor/lib/mediadrm/libmockdrmcryptoplugin.so
 #system/vendor/lib/mediadrm/libplayreadydrmplugin.so
 system/vendor/lib/mediadrm/libwvdrmengine.so
+system/vendor/lib/drm/libdrmwvmplugin.so
 
 # 2016/10/17 Fix charging animation
 system/lib/libshowlogo.so
