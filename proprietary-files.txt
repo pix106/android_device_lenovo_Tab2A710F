@@ -228,7 +228,6 @@ system/etc/audio_policy.conf
 system/etc/mtklog-config.prop
 system/etc/mtk_omx_core.cfg
 system/etc/bluetooth/bt_stack.conf
-system/etc/bluetooth/auto_pair_devlist.conf
 system/vendor/etc/audio_effects.conf
 system/vendor/etc/dolby/ds1-default.xml
 system/etc/.tp/thermal.conf
