@@ -222,7 +222,6 @@ system/etc/firmware/mt6627/mt6627_fm_v5_patch.bin
 system/etc/mtk_omx_core.cfg
 system/etc/fmr/mt6627_fm_cust.cfg
 system/etc/mtklog-config.prop
-system/etc/mtk_omx_core.cfg
 system/etc/.tp/thermal.conf
 system/etc/.tp/thermal.off.conf
 
