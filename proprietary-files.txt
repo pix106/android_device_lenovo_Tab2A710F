@@ -185,6 +185,14 @@ system/vendor/lib/mediadrm/libmockdrmcryptoplugin.so
 system/vendor/lib/mediadrm/libwvdrmengine.so
 system/vendor/lib/drm/libdrmwvmplugin.so
 
+# codecs and drm
+system/bin/MtkCodecService
+system/lib/libBnMtkCodec.so
+system/lib/libmpodecoder.so
+system/lib/libdrmdecrypt.so
+system/lib/libsbccodec.so
+
+
 # 2016/10/17 Fix charging animation
 system/lib/libshowlogo.so
 
