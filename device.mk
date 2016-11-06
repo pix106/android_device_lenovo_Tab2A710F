@@ -1,19 +1,20 @@
-LOCAL_PATH := device/lenovo/Tab2A710F
+DEVICE_DIR := device/lenovo/Tab2A710F
+VENDOR_DIR := vendor/lenovo/Tab2A710F
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
+	LOCAL_KERNEL := $(DEVICE_DIR)/kernel
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
 # Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/lenovo/Tab2A710F/Tab2A710F-vendor.mk)
+$(call inherit-product-if-exists, $(VENDOR_DIR)/Tab2A710F-vendor.mk)
 
 # Device overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += $(DEVICE_DIR)/overlay
 
 # Overlay Binaries
-$(call inherit-product, $(LOCAL_PATH)/overlay-binaries/overlay-binaries.mk)
+$(call inherit-product, $(DEVICE_DIR)/overlay-binaries/overlay-binaries.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
@@ -37,7 +38,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # GPS
 PRODUCT_COPY_FILES += \
-     $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
+     $(DEVICE_DIR)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -89,27 +90,27 @@ PRODUCT_COPY_FILES += \
 
 # media codecs files that are not copied from stock rom
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
-	$(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
+	$(DEVICE_DIR)/configs/media_codecs.xml:system/etc/media_codecs.xml \
+	$(DEVICE_DIR)/configs/media_profiles.xml:system/etc/media_profiles.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
 # Bluetooth config files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/bluetooth/bt_did.conf:system/etc/bluetooth/bt_did.conf \
-    $(LOCAL_PATH)/configs/bluetooth/btconfig.xml:system/etc/bluetooth/btconfig.xml
+    $(DEVICE_DIR)/configs/bluetooth/bt_did.conf:system/etc/bluetooth/bt_did.conf \
+    $(DEVICE_DIR)/configs/bluetooth/btconfig.xml:system/etc/bluetooth/btconfig.xml
 
 # Wifi config files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+    $(DEVICE_DIR)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    $(DEVICE_DIR)/configs/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    $(DEVICE_DIR)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
 
 
 # Audio policy
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
+    $(DEVICE_DIR)/configs/audio_policy.conf:system/etc/audio_policy.conf
 
 
 # Audio
