@@ -21,7 +21,16 @@ VENDOR=lenovo
 DEVICE=Tab2A710F
 
 # path to stock system dump
-dump_dir=/home/seb/android/stock/lp
+if ! [ $# -eq 1 ] ;
+then
+        echo ""
+        echo "ERROR : Missing required system_dump_dir"
+        echo "Usage: $0 system_dump_dir"
+        echo ""
+        exit 1
+else
+        dump_dir="$1"
+fi
 
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary
 
