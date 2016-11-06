@@ -2,6 +2,7 @@ USE_CAMERA_STUB := true
 
 DEVICE_DIR := device/lenovo/Tab2A710F
 VENDOR_DIR := vendor/lenovo/Tab2A710F
+KERNEL_DIR := kernel/lenovo/Tab2A710F
 
 # Additional includes
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_DIR)/include	# moved up 03/10/2016
@@ -48,7 +49,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto
 BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
-#TARGET_KERNEL_SOURCE := kernel/lenovo/Tab2A710F
+#TARGET_KERNEL_SOURCE := $(KERNEL_DIR)
 #TARGET_KERNEL_CONFIG := bitland8127_tb_l_defconfig
 TARGET_PREBUILT_KERNEL := $(DEVICE_DIR)/kernel
 
