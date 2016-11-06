@@ -1,10 +1,13 @@
 USE_CAMERA_STUB := true
 
+DEVICE_DIR := device/lenovo/Tab2A710F
+VENDOR_DIR := vendor/lenovo/Tab2A710F
+
 # Additional includes
-TARGET_SPECIFIC_HEADER_PATH := device/lenovo/Tab2A710F/include	# moved up 03/10/2016
+TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_DIR)/include	# moved up 03/10/2016
 
 # inherit from the proprietary version
--include vendor/lenovo/Tab2A710F/BoardConfigVendor.mk
+-include $(VENDOR_DIR)/BoardConfigVendor.mk
 
 # Platform
 TARGET_BOARD_PLATFORM := mt8127
@@ -47,7 +50,7 @@ BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 #TARGET_KERNEL_SOURCE := kernel/lenovo/Tab2A710F
 #TARGET_KERNEL_CONFIG := bitland8127_tb_l_defconfig
-TARGET_PREBUILT_KERNEL := device/lenovo/Tab2A710F/kernel
+TARGET_PREBUILT_KERNEL := $(DEVICE_DIR)/kernel
 
 # MTK
 BOARD_HAS_MTK_HARDWARE := true	# 03/10/2016
@@ -75,7 +78,7 @@ COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD	# added 03/10/2016
 
 # Graphics
 USE_OPENGL_RENDERER := true
-BOARD_EGL_CFG := device/lenovo/Tab2A710F/configs/egl.cfg
+BOARD_EGL_CFG := $(DEVICE_DIR)/configs/egl.cfg
 TARGET_USES_C2D_COMPOSITION := true     # added 03/10/2016
 TARGET_USES_OVERLAY := true     # added 03/10/2016
 TARGET_USES_ION := true     # added 03/10/2016
@@ -102,11 +105,11 @@ WIFI_DRIVER_FW_PATH_P2P:=P2P
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_MTK := true
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lenovo/Tab2A710F/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_DIR)/bluetooth
 
 # RECOVERY
-TARGET_RECOVERY_FSTAB := device/lenovo/Tab2A710F/recovery/root/recovery.fstab
-TARGET_RECOVERY_INITRC := device/lenovo/Tab2A710F/recovery/root/init.rc
+TARGET_RECOVERY_FSTAB := $(DEVICE_DIR)/recovery/root/recovery.fstab
+TARGET_RECOVERY_INITRC := $(DEVICE_DIR)/recovery/root/init.rc
 
 # Debug
 TWRP_INCLUDE_LOGCAT := true
@@ -117,7 +120,7 @@ TARGET_LDPRELOAD += libxlog.so
 
 # SELinux
 BOARD_SEPOLICY_DIRS := \
-       device/lenovo/Tab2A710F/sepolicy
+       $(DEVICE_DIR)/sepolicy
 
 #BOARD_SEPOLICY_UNION := \
 #        device.te \
