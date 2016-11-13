@@ -2,8 +2,6 @@
 # system.prop for Tab2A710F
 #
 
-persist.sys.timezone=Asia/Kolkata 
-
 ro.sf.lcd_density=160
 
 #support opengles 2.0 3.0 is 196608
