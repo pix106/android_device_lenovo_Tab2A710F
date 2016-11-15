@@ -39,3 +39,6 @@ ro.sys.usb.bicr=yes
 ro.sys.usb.charging.only=yes
 # add support for USB storage type
 persist.sys.isUsbOtgEnabled=1
+
+# Disable dirty region for Mali
+debug.hwui.render_dirty_regions=false
