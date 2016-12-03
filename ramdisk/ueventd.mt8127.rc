@@ -1,7 +1,8 @@
 # ueventd.mt8127.rc installed by PixNDom build scripts
 #
-/dev/pvrsrvkm             0766   root       root
-/dev/pvr_sync           0766   root         root
+
+#/dev/pvrsrvkm             0766   root       root
+#/dev/pvr_sync           0766   root         root
 /dev/stpwmt             0660   system       system
 /dev/stpbt              0660   bluetooth    radio
 /dev/stpgps             0660   gps          gps
@@ -16,7 +17,7 @@
 /dev/block/mmcblk0      0660   root         system
 /dev/trustzone          0660   root         drmrpc
 /dev/devmap             0440   root         system
-/dev/mali0              0666   system      graphics
+/dev/mali               0666   system      graphics
 /dev/gps                0660   gps          system
 
 # 16/01/2016
