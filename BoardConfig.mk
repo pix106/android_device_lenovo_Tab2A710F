@@ -49,9 +49,18 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto
 BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
-#TARGET_KERNEL_SOURCE := $(KERNEL_DIR)
-#TARGET_KERNEL_CONFIG := bitland8127_tb_l_defconfig
-TARGET_PREBUILT_KERNEL := $(DEVICE_DIR)/kernel
+
+BUILD_KERNEL_FROM_SOURCE := false
+ifeq ($(BUILD_KERNEL_FROM_SOURCE),true)
+    # build kernel from sources
+    BOARD_USES_MTK_KERNELBUILD := true    # from https://gitlab.com/SaberMod/slim-android-build/blob/d0ea96c4ec309e9361f8da6d12dc6770f04e57f4/core/mtk_utils.mk
+    TARGET_KERNEL_SOURCE := $(KERNEL_DIR)
+    TARGET_KERNEL_CONFIG := bitland8127_tb_l_defconfig
+    #TARGET_KMODULES := true         # is it needed ?
+else
+    # use prebuilt kernel
+    TARGET_PREBUILT_KERNEL := $(DEVICE_DIR)/kernel
+endif
 
 # MTK
 BOARD_HAS_MTK_HARDWARE := true
@@ -90,6 +99,7 @@ MAX_EGL_CACHE_SIZE := 1024*1024
 # Surfaceflinger optimization for VD surfaces
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 #NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+
 
 # WIFI
 WPA_SUPPLICANT_VERSION := VER_0_8_X
