@@ -46,4 +46,4 @@ on property:sys.perf.profile=2
 
 on property:sys.boot_completed=1
 # Switch to Performance mode after boot for better UX
-    setprop sys.perf.profile 2
+#    setprop sys.perf.profile 2
