@@ -17,7 +17,9 @@ Camera  | VGA (Front-Facing)
 
 Not Working
 
-* Video recording with stock camera app
+* HWC has issues
+* Video streaming (Youtube live...)
+* Video recording with stock camera app (works using some other apps)
 * FM Radio
 
 
