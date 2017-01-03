@@ -12,32 +12,32 @@ PRODUCT_CHARACTERISTICS := tablet
 
 # init
 PRODUCT_COPY_FILES += \
-    $(DEVICE_DIR)/ramdisk/init.mt8127.rc:root/init.mt8127.rc \
-    $(DEVICE_DIR)/ramdisk/init.mt8127.power.rc:root/init.mt8127.power.rc \
-    $(DEVICE_DIR)/ramdisk/init.mt8127.usb.rc:root/init.mt8127.usb.rc \
-    $(DEVICE_DIR)/ramdisk/init.aee.rc:root/init.aee.rc \
-    $(DEVICE_DIR)/ramdisk/init.ssd.rc:root/init.ssd.rc \
-    $(DEVICE_DIR)/ramdisk/init.project.rc:root/init.project.rc \
-    $(DEVICE_DIR)/ramdisk/init.charging.rc:root/init.charging.rc \
-    $(DEVICE_DIR)/ramdisk/ueventd.rc:root/ueventd.rc \
-    $(DEVICE_DIR)/ramdisk/ueventd.mt8127.rc:root/ueventd.mt8127.rc \
-    $(DEVICE_DIR)/ramdisk/factory_init.project.rc:root/factory_init.project.rc \
-    $(DEVICE_DIR)/ramdisk/meta_init.rc:root/meta_init.rc \
-    $(DEVICE_DIR)/ramdisk/meta_init.project.rc:root/meta_init.project.rc \
-    $(DEVICE_DIR)/ramdisk/factory_init.rc:root/factory_init.rc \
-    $(DEVICE_DIR)/ramdisk/auto_shutdown.sh:root/auto_shutdown.sh \
-    $(DEVICE_DIR)/ramdisk/enableswap.sh:root/enableswap.sh
-#    $(DEVICE_DIR)/ramdisk/init.environ.rc:root/init.environ.rc \
+    $(DEVICE_DIR)/rootdir/init.mt8127.rc:root/init.mt8127.rc \
+    $(DEVICE_DIR)/rootdir/init.mt8127.power.rc:root/init.mt8127.power.rc \
+    $(DEVICE_DIR)/rootdir/init.mt8127.usb.rc:root/init.mt8127.usb.rc \
+    $(DEVICE_DIR)/rootdir/init.aee.rc:root/init.aee.rc \
+    $(DEVICE_DIR)/rootdir/init.ssd.rc:root/init.ssd.rc \
+    $(DEVICE_DIR)/rootdir/init.project.rc:root/init.project.rc \
+    $(DEVICE_DIR)/rootdir/init.charging.rc:root/init.charging.rc \
+    $(DEVICE_DIR)/rootdir/ueventd.rc:root/ueventd.rc \
+    $(DEVICE_DIR)/rootdir/ueventd.mt8127.rc:root/ueventd.mt8127.rc \
+    $(DEVICE_DIR)/rootdir/factory_init.project.rc:root/factory_init.project.rc \
+    $(DEVICE_DIR)/rootdir/meta_init.rc:root/meta_init.rc \
+    $(DEVICE_DIR)/rootdir/meta_init.project.rc:root/meta_init.project.rc \
+    $(DEVICE_DIR)/rootdir/factory_init.rc:root/factory_init.rc \
+    $(DEVICE_DIR)/rootdir/auto_shutdown.sh:root/auto_shutdown.sh \
+    $(DEVICE_DIR)/rootdir/enableswap.sh:root/enableswap.sh
+#    $(DEVICE_DIR)/rootdir/init.environ.rc:root/init.environ.rc \
 
 
 # fstab
 PRODUCT_COPY_FILES += \
-    $(DEVICE_DIR)/ramdisk/fstab:root/fstab \
-    $(DEVICE_DIR)/ramdisk/fstab.mt8127:root/fstab.mt8127
+    $(DEVICE_DIR)/rootdir/fstab:root/fstab \
+    $(DEVICE_DIR)/rootdir/fstab.mt8127:root/fstab.mt8127
 
 # sh	# Is there an other way to avoid "- exec '/system/bin/sh' failed: No such file or directory (2) -" ?
 PRODUCT_COPY_FILES += \
-    $(DEVICE_DIR)/ramdisk/system/bin/sh:root/system/bin/sh
+    $(DEVICE_DIR)/rootdir/system/bin/sh:root/system/bin/sh
 
 # libxlog
 PRODUCT_PACKAGES += \
