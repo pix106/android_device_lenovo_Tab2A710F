@@ -5,7 +5,7 @@ PRODUCT_RELEASE_NAME := Tab2A710F
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/lenovo/Tab2A710F/full_Tab2A710F.mk)
+$(call inherit-product, device/lenovo/Tab2A710F/Tab2A710F.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := Tab2A710F
