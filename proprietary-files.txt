@@ -186,6 +186,9 @@ system/vendor/lib/drm/libdrmwvmplugin.so
 # misc
 system/lib/libui_ext.so
 system/lib/libperfservicenative.so
+system/lib/libmtcloader.so
+system/lib/libmemtrack.so
+system/lib/libcamera_metadata.so
 
 # Related to charging animation
 system/lib/libshowlogo.so
