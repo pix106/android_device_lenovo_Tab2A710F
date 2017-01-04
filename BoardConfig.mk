@@ -162,14 +162,4 @@ BOARD_SEPOLICY_DIRS := \
 # from http://pastebin.com/Vyk35GrL
 #TARGET_DISPLAY_INSECURE_MM_HEAP := true
 
-# changes to existing flags
-#TARGET_BOOTLOADER_BOARD_NAME := mt8127          # change ?
-
-#BOARD_EGL_SYSTEMUI_PBSIZE_HACK := true
-#AUDIO_FEATURE_ENABLED_FM := true
-
-#BOARD_NEEDS_MEMORYHEAPION := true   # exynos only ! (build fails on libion_exynos)
-#BOARD_USES_HWC_SERVICES := true    # exynos only ?
-#SURFACE_IS_BGR32 := true    # manta only ?
-
 ## /test
