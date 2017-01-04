@@ -4,9 +4,6 @@ DEVICE_DIR := device/lenovo/Tab2A710F
 VENDOR_DIR := vendor/lenovo/Tab2A710F
 KERNEL_DIR := kernel/lenovo/Tab2A710F
 
-# include stock ProjectConfig
-include $(DEVICE_DIR)/ProjectConfig.mk
-
 # Additional includes
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_DIR)/include
 
