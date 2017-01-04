@@ -62,10 +62,6 @@ else
     TARGET_PREBUILT_KERNEL := $(DEVICE_DIR)/kernel
 endif
 
-# Boot
-BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_DIR)/bootimg.mk
-BOARD_MKBOOTIMG_ARGS := --base 0x80000000 --pagesize 2048 --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --second_offset 0x0F00000 --board 1438361675
-
 # MTK
 BOARD_HAS_MTK_HARDWARE := true
 MTK_HARDWARE := true
