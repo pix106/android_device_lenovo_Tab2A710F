@@ -258,12 +258,6 @@ system/etc/.tp/thermal.off.conf
 #system/bin/ccci_fsd
 #system/lib/libccci_util.so
 #system/bin/muxreport
-
-#system/bin/netdiag
-#system/bin/terservice
-#system/lib/libterservice.so
-#system/etc/ecc_list.xml
-
 ### / PPP/RIL/...
 
 # missing frameworks (init.environ.rc) - blobs or built with frameworks repo or do not use at all ? TODO
