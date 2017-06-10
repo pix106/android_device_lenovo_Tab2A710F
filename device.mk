@@ -141,6 +141,34 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
 	$(LOCAL_KERNEL):kernel
 
+
+# audio
+PRODUCT_PACKAGES += \
+        audio_policy.default \
+	audio_policy.stub \
+        audio.r_submix.default \
+        audio.usb.default \
+	audio.primary.default \
+        libaudio-resampler
+
+# cam
+PRODUCT_PACKAGES += \
+        libcameraanalyzer
+
+# Misc HW
+PRODUCT_PACKAGES += \
+	keystore.default \
+	local_time.default \
+	power.default \
+	vibrator.default
+
+# Wifi
+PRODUCT_PACKAGES += \
+	libwifi-hal-mt66xx \
+	libwifi-hal
+
+
+
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 # call dalvik heap config

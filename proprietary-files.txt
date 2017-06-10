@@ -1,3 +1,24 @@
+#system/lib/hw/audio_policy.default.so
+#system/lib/hw/audio_policy.stub.so
+#system/lib/hw/audio.primary.default.so
+#system/lib/hw/audio.r_submix.default.so
+#system/lib/hw/audio.usb.default.so
+#system/lib/libaudio-resampler.so
+#system/lib/libcameraanalyzer.so
+
+#system/lib/hw/keystore.default.so
+#system/lib/hw/local_time.default.so
+#system/lib/hw/power.default.so
+#system/lib/hw/vibrator.default.so
+
+system/lib/libgralloc_extra.so
+system/lib/hw/gralloc.default.so
+
+system/lib/libcurl.so
+
+system/vendor/lib/mediadrm/libmockdrmcryptoplugin.so
+
+######
 system/bin/6620_launcher
 system/bin/6620_wmt_concurrency
 system/bin/6620_wmt_lpbk
@@ -19,26 +40,15 @@ system/bin/wmt_loader
 system/lib/egl/libEGL_mali.so
 system/lib/egl/libGLESv1_CM_mali.so
 system/lib/egl/libGLESv2_mali.so
-system/lib/hw/audio_policy.default.so
-system/lib/hw/audio_policy.stub.so
-system/lib/hw/audio.primary.default.so
 system/lib/hw/audio.primary.mt8127.so
-system/lib/hw/audio.r_submix.default.so
-system/lib/hw/audio.usb.default.so
 system/lib/hw/camera.mt8127.so
-system/lib/hw/gralloc.default.so
 system/lib/hw/gralloc.mt8127.so
 system/lib/hw/hwcomposer.mt8127.so
-system/lib/hw/keystore.default.so
-system/lib/hw/local_time.default.so
-system/lib/hw/power.default.so
 system/lib/hw/sensors.mt8127.so
-system/lib/hw/vibrator.default.so
 system/lib/lib_uree_mtk_crypto.so
 system/lib/lib_uree_mtk_video_secure_al.so
 system/lib/lib3a.so
 system/lib/libaed.so
-system/lib/libaudio-resampler.so
 system/lib/libaudiocompensationfilter.so
 system/lib/libaudiocomponentengine.so
 system/lib/libaudiocustparam.so
@@ -67,7 +77,6 @@ system/lib/libcam.utils.so
 system/lib/libcamalgo.so
 system/lib/libcamdrv.so
 system/lib/libcamera_client_mtk.so
-system/lib/libcameraanalyzer.so
 system/lib/libcameracustom.so
 system/lib/libcustom_nvram.so
 system/lib/libcvsd_mtk.so
@@ -77,7 +86,6 @@ system/lib/libfeatureio.so
 system/lib/libfile_op.so
 system/lib/libGdmaScalerPipe.so
 system/lib/libGLESv3.so
-system/lib/libgralloc_extra.so
 system/lib/libgui_ext.so
 system/lib/libhwm.so
 system/lib/libimageio_plat_drv.so
@@ -121,7 +129,6 @@ system/lib/libvcodecdrv.so
 system/lib/libvp8dec_sa.ca7.so
 system/lib/libvp9dec_sa.ca7.so
 system/lib/libmp2dec_sa.ca7.so
-
 system/lib/hw/lights.default.so
 system/lib/hw/gps.default.so
 
@@ -162,9 +169,8 @@ system/lib/libwapi.so
 
 system/lib/libbluetoothdrv.so
 
-
 # gps
-system/lib/libcurl.so
+#system/lib/libcurl.so
 system/lib/libmnl.so
 system/xbin/mnld
 
@@ -178,7 +184,7 @@ system/vendor/media/PFFprec_600.emd
 system/vendor/lib/libwvdrm_L3.so
 system/vendor/lib/libwvm.so
 system/vendor/lib/libWVStreamControlAPI_L3.so
-system/vendor/lib/mediadrm/libmockdrmcryptoplugin.so
+#system/vendor/lib/mediadrm/libmockdrmcryptoplugin.so
 #system/vendor/lib/mediadrm/libplayreadydrmplugin.so
 system/vendor/lib/mediadrm/libwvdrmengine.so
 system/vendor/lib/drm/libdrmwvmplugin.so
