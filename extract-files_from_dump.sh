@@ -14,22 +14,29 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Modified by pix106 - 2016/01/11
-# use a local dump system dir instead of adb pull
 
-VENDOR=lenovo
-DEVICE=Tab2A710F
+# Modified by pix106
+# 2016/01/11 : use a local dump system dir instead of adb pull
+# 2017/06/05 : add vendor, device and proprietary filelist args
 
-# path to stock system dump
-if ! [ $# -eq 1 ] ;
+# Check args #
+if [ $# -lt 3 ] ;
 then
         echo ""
-        echo "ERROR : Missing required system_dump_dir"
-        echo "Usage: $0 system_dump_dir"
+        echo "Usage: $0 vendor device system_dump_dir [proprietary-files.txt]"
         echo ""
         exit 1
+fi
+
+VENDOR="$1"
+DEVICE="$2"
+dump_dir="$3"
+
+if [ "$2" != "" ] ;
+then
+	proprietary_file_list="$4"
 else
-        dump_dir="$1"
+	proprietary_file_list="proprietary-files.txt"
 fi
 
 mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary
@@ -37,8 +44,8 @@ mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary
 #adb root
 #adb wait-for-device
 
-echo "Copying proprietary files from $dump_dir..."
-for FILE in `cat proprietary-files.txt | grep -v ^# | grep -v ^$`; do
+echo "Copying proprietary files from $dump_dir... using $proprietary_file_list filelist"
+for FILE in `cat "$proprietary_file_list" | grep -v ^# | grep -v ^$`; do
     DIR=`dirname $FILE`
     if [ ! -d ../../../vendor/$VENDOR/$DEVICE/proprietary/$DIR ]; then
         mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/$DIR
@@ -69,8 +76,8 @@ PRODUCT_COPY_FILES += \\
 EOF
 
 LINEEND=" \\"
-COUNT=`cat proprietary-files.txt | grep -v ^# | grep -v ^$ | wc -l | awk {'print $1'}`
-for FILE in `cat proprietary-files.txt | grep -v ^# | grep -v ^$`; do
+COUNT=`cat "$proprietary_file_list" | grep -v ^# | grep -v ^$ | wc -l | awk {'print $1'}`
+for FILE in `cat "$proprietary_file_list" | grep -v ^# | grep -v ^$`; do
     COUNT=`expr $COUNT - 1`
     if [ $COUNT = "0" ]; then
         LINEEND=""
