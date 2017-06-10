@@ -7,6 +7,11 @@ KERNEL_DIR := kernel/lenovo/Tab2A710F
 # Additional includes
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_DIR)/include
 
+
+# What to do with this file ? TODO
+#-include $(DEVICE_DIR)/ProjectConfig.mk
+
+
 # inherit from the proprietary version
 -include $(VENDOR_DIR)/BoardConfigVendor.mk
 
