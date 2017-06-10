@@ -56,7 +56,7 @@ ifeq ($(BUILD_KERNEL_FROM_SOURCE),true)
     BOARD_USES_MTK_KERNELBUILD := true    # from https://gitlab.com/SaberMod/slim-android-build/blob/d0ea96c4ec309e9361f8da6d12dc6770f04e57f4/core/mtk_utils.mk
     TARGET_KERNEL_SOURCE := $(KERNEL_DIR)
     TARGET_KERNEL_CONFIG := bitland8127_tb_l_defconfig
-    #TARGET_KMODULES := true         # is it needed ?
+    TARGET_KMODULES := true         # is it needed ?
 else
     # use prebuilt kernel
     TARGET_PREBUILT_KERNEL := $(DEVICE_DIR)/kernel
