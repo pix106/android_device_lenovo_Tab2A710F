@@ -1,3 +1,42 @@
+# build from some MTK sources from xen0n
+#system/lib/libgralloc_extra.so
+#system/lib/libion_mtk.so
+# build from sources too
+#system/lib/hw/gralloc.default.so
+#system/lib/libion.so
+
+
+# additions
+# called in init.mt8127.rc
+system/bin/autokd
+# AEE related
+system/bin/rtt
+
+
+# lessblobs NEXT
+#system/lib/libmemtrack.so
+#system/lib/libcamera_metadata.so
+#system/lib/libmediandk.so
+# /lessblobs-next
+
+
+# additions NEXT ?
+#system/lib/libAAX_SDK.so
+#system/lib/libmtkplayer.so
+
+
+# add jni ?
+#system/lib/libvobsub_jni.so
+#system/lib/libjni_subtitle_bitmap.so
+#system/lib/libgifEncoder_jni.so
+
+
+# can be built from source
+system/lib/libcurl.so
+system/vendor/lib/mediadrm/libmockdrmcryptoplugin.so
+
+
+# lessblobs - cm-12.1-test
 #system/lib/hw/audio_policy.default.so
 #system/lib/hw/audio_policy.stub.so
 #system/lib/hw/audio.primary.default.so
@@ -5,18 +44,11 @@
 #system/lib/hw/audio.usb.default.so
 #system/lib/libaudio-resampler.so
 #system/lib/libcameraanalyzer.so
-
 #system/lib/hw/keystore.default.so
 #system/lib/hw/local_time.default.so
 #system/lib/hw/power.default.so
 #system/lib/hw/vibrator.default.so
 
-system/lib/libgralloc_extra.so
-system/lib/hw/gralloc.default.so
-
-system/lib/libcurl.so
-
-system/vendor/lib/mediadrm/libmockdrmcryptoplugin.so
 
 ######
 system/bin/6620_launcher
@@ -90,8 +122,6 @@ system/lib/libgui_ext.so
 system/lib/libhwm.so
 system/lib/libimageio_plat_drv.so
 system/lib/libimageio.so
-system/lib/libion_mtk.so
-system/lib/libion.so
 system/lib/libJpgDecPipe.so
 system/lib/libJpgEncPipe.so
 system/lib/libm4u.so

@@ -144,16 +144,16 @@ PRODUCT_COPY_FILES += \
 
 # audio
 PRODUCT_PACKAGES += \
-        audio_policy.default \
+	audio_policy.default \
 	audio_policy.stub \
-        audio.r_submix.default \
-        audio.usb.default \
+	audio.r_submix.default \
+	audio.usb.default \
 	audio.primary.default \
-        libaudio-resampler
+	libaudio-resampler
 
 # cam
 PRODUCT_PACKAGES += \
-        libcameraanalyzer
+	libcameraanalyzer
 
 # Misc HW
 PRODUCT_PACKAGES += \
@@ -167,6 +167,28 @@ PRODUCT_PACKAGES += \
 	libwifi-hal-mt66xx \
 	libwifi-hal
 
+
+
+## NEW
+#PRODUCT_PACKAGES += \
+#	libcamera_metadata \
+#	libmemtrack \
+#	libmediandk \
+#	libsoundtrigger
+
+#
+PRODUCT_PACKAGES += \
+        libion \
+	gralloc.default
+
+# MTK (xen0n)
+PRODUCT_PACKAGES += \
+	libion_mtk \
+	libgralloc_extra
+
+#PRODUCT_PACKAGES += \
+#	libtinycompress
+## /NEW
 
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0

@@ -28,6 +28,7 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_DIR)/ramdisk/auto_shutdown.sh:root/auto_shutdown.sh \
     $(DEVICE_DIR)/ramdisk/enableswap.sh:root/enableswap.sh
 #    $(DEVICE_DIR)/ramdisk/init.environ.rc:root/init.environ.rc \
+#    $(DEVICE_DIR)/ramdisk/init.rc:root/init.rc \
 
 
 # fstab
