@@ -37,7 +37,7 @@ TARGET_OTA_ASSERT_DEVICE := Tab2A710F
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216          # = 16MB (OK with MTKDroidTools value)
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216		# = 16MB (OK with MTKDroidTools value)
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1610612736		# = 1,5 GB  (OK with MTKDroidTools value)
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 3221225472	# = 3 GB on 5,5 GB max  (OK with MTKDroidTools value)
+#BOARD_USERDATAIMAGE_PARTITION_SIZE := 3221225472	# = 3 GB on 5,5 GB max  (OK with MTKDroidTools value)
 BOARD_CACHEIMAGE_PARTITION_SIZE := 132120576		# = 0x07e00000 = 128MB
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -60,7 +60,7 @@ ifeq ($(BUILD_KERNEL_FROM_SOURCE),true)
     # build kernel from sources
     BOARD_USES_MTK_KERNELBUILD := true    # from https://gitlab.com/SaberMod/slim-android-build/blob/d0ea96c4ec309e9361f8da6d12dc6770f04e57f4/core/mtk_utils.mk
     TARGET_KERNEL_SOURCE := $(KERNEL_DIR)
-    TARGET_KERNEL_CONFIG := bitland8127_tb_l_defconfig
+    TARGET_KERNEL_CONFIG := bitland8127_pix_defconfig
     TARGET_KMODULES := true         # is it needed ?
 else
     # use prebuilt kernel
@@ -142,29 +142,20 @@ BOARD_SEPOLICY_DIRS := \
 #        system.te \
 #        file_contexts
 
+# Some test
+BOARD_EGL_WORKAROUND_BUG_10194508 := true
 
-# test
-# Some flags that may be related to HWC problems. Tried some...
-#
-# from https://github.com/DevUt/android_device_htc_endeavoru/blob/twrp3/BoardConfig.mk
-#BOARD_EGL_WORKAROUND_BUG_10194508 := true
-#TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true  # removed, as seen removed on github, try it later
-#BOARD_EGL_SKIP_FIRST_DEQUEUE := true
-#BOARD_EGL_NEEDS_FNW := true                    # seems old, try it later, may make surfaceflinger fail
-#BOARD_USES_LEGACY_MMAP := true                 # seems old
-#TARGET_NEEDS_NON_PIE_SUPPORT := true           # seems old
-#COMMON_GLOBAL_CFLAGS += -DTARGET_NEEDS_HWC_V0  # not found in source
-#COMMON_GLOBAL_CFLAGS += -DBOARD_CANT_REALLOCATE_OMX_BUFFERS
+COMMON_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
+TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
-# from https://github.com/thune-xiaobai/Android_device_ZTE_U950/blob/master/BoardConfig.mk
-#BOARD_NEEDS_OLD_HWC_API := true
-#BOARD_EGL_NEEDS_LEGACY_FB := true
+# Disable memcpy opt (for audio libraries)
+TARGET_CPU_MEMCPY_OPT_DISABLE := true
 
-# from https://github.com/CyanogenMod12Y300/android_device_huawei_msm7x27a-common/blob/cm-12.1/BoardConfigCommon.mk
-#TARGET_ENABLE_QC_AV_ENHANCEMENTS := true       # ! No QC hardware
-#TARGET_NO_ADAPTIVE_PLAYBACK := true
+TARGET_BOOTLOADER_BOARD_NAME := mt8127
 
-# from http://pastebin.com/Vyk35GrL
-#TARGET_DISPLAY_INSECURE_MM_HEAP := true
+#if using a _mtk_ repo
+#BOARD_DONT_USE_MTK_BOOTIMG := true
+#BOARD_CONNECTIVITY_VENDOR := MediaTek
+#BOARD_USES_LEGACY_MTK_AV_BLOB := true
 
 ## /test
