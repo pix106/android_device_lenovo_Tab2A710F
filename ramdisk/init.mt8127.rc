@@ -97,7 +97,6 @@ on init
     # 16/01/2016 : folowing line does not seem to be applied ? 
     chown system system /dev/stpwmt
 
-
 # 16/01/2016 - ok, but /dev/stp*
     chmod 0666 /dev/cpuctl
 
@@ -146,6 +145,14 @@ on init
     chown system media /dev/fm
 
 # PixNDom fix end ##################
+
+# Pix 2017 - from xen0n repo
+#BT SCO CVSD, for MT6572 and MT6582 CVSD codec on AP
+    chmod 0660 /dev/ebc
+    chown system media /dev/ebc
+# Pix end
+
+
 
 #HWComposer Vsync
     chmod 0666 /dev/mtkfb_vsync
@@ -703,6 +710,18 @@ service audio-daemon /system/bin/audiocmdservice_atci
 service flash_tee2 /system/etc/install-tee2.sh
     class main
     oneshot
+
+
+## Pix 2017 - from xen0n repo
+# For WiFi High Speed calibration
+service autokd /system/bin/autokd
+    class core
+    user system
+    group system
+## Pix end
+
+
+
 
 # GuiExt Server init
 service guiext-server /system/bin/guiext-server
