@@ -1,3 +1,59 @@
+# build from some MTK sources from xen0n
+system/lib/libgralloc_extra.so
+system/lib/libion_mtk.so
+
+system/lib/libstlport.so
+
+# build from sources too
+#system/lib/hw/gralloc.default.so
+#system/lib/libion.so
+
+
+# additions
+# called in init.mt8127.rc
+system/bin/autokd
+# AEE related
+system/bin/rtt
+
+
+# lessblobs NEXT
+#system/lib/libmemtrack.so
+#system/lib/libcamera_metadata.so
+#system/lib/libmediandk.so
+# /lessblobs-next
+
+
+# additions NEXT ?
+#system/lib/libAAX_SDK.so
+#system/lib/libmtkplayer.so
+
+
+# add jni ?
+#system/lib/libvobsub_jni.so
+#system/lib/libjni_subtitle_bitmap.so
+#system/lib/libgifEncoder_jni.so
+
+
+# can be built from source
+system/lib/libcurl.so
+system/vendor/lib/mediadrm/libmockdrmcryptoplugin.so
+
+
+# lessblobs - cm-12.1-test
+#system/lib/hw/audio_policy.default.so
+#system/lib/hw/audio_policy.stub.so
+#system/lib/hw/audio.primary.default.so
+#system/lib/hw/audio.r_submix.default.so
+#system/lib/hw/audio.usb.default.so
+#system/lib/libaudio-resampler.so
+#system/lib/libcameraanalyzer.so
+#system/lib/hw/keystore.default.so
+#system/lib/hw/local_time.default.so
+#system/lib/hw/power.default.so
+#system/lib/hw/vibrator.default.so
+
+
+######
 system/bin/6620_launcher
 system/bin/6620_wmt_concurrency
 system/bin/6620_wmt_lpbk
@@ -19,26 +75,15 @@ system/bin/wmt_loader
 system/lib/egl/libEGL_mali.so
 system/lib/egl/libGLESv1_CM_mali.so
 system/lib/egl/libGLESv2_mali.so
-system/lib/hw/audio_policy.default.so
-system/lib/hw/audio_policy.stub.so
-system/lib/hw/audio.primary.default.so
 system/lib/hw/audio.primary.mt8127.so
-system/lib/hw/audio.r_submix.default.so
-system/lib/hw/audio.usb.default.so
 system/lib/hw/camera.mt8127.so
-system/lib/hw/gralloc.default.so
 system/lib/hw/gralloc.mt8127.so
 system/lib/hw/hwcomposer.mt8127.so
-system/lib/hw/keystore.default.so
-system/lib/hw/local_time.default.so
-system/lib/hw/power.default.so
 system/lib/hw/sensors.mt8127.so
-system/lib/hw/vibrator.default.so
 system/lib/lib_uree_mtk_crypto.so
 system/lib/lib_uree_mtk_video_secure_al.so
 system/lib/lib3a.so
 system/lib/libaed.so
-system/lib/libaudio-resampler.so
 system/lib/libaudiocompensationfilter.so
 system/lib/libaudiocomponentengine.so
 system/lib/libaudiocustparam.so
@@ -67,7 +112,6 @@ system/lib/libcam.utils.so
 system/lib/libcamalgo.so
 system/lib/libcamdrv.so
 system/lib/libcamera_client_mtk.so
-system/lib/libcameraanalyzer.so
 system/lib/libcameracustom.so
 system/lib/libcustom_nvram.so
 system/lib/libcvsd_mtk.so
@@ -77,13 +121,10 @@ system/lib/libfeatureio.so
 system/lib/libfile_op.so
 system/lib/libGdmaScalerPipe.so
 system/lib/libGLESv3.so
-system/lib/libgralloc_extra.so
 system/lib/libgui_ext.so
 system/lib/libhwm.so
 system/lib/libimageio_plat_drv.so
 system/lib/libimageio.so
-system/lib/libion_mtk.so
-system/lib/libion.so
 system/lib/libJpgDecPipe.so
 system/lib/libJpgEncPipe.so
 system/lib/libm4u.so
@@ -120,9 +161,9 @@ system/lib/libvcodec_utility.so
 system/lib/libvcodecdrv.so
 system/lib/libvp8dec_sa.ca7.so
 system/lib/libvp9dec_sa.ca7.so
-
-# added files
 system/lib/libmp2dec_sa.ca7.so
+system/lib/hw/lights.default.so
+system/lib/hw/gps.default.so
 
 # used in init.aee.rc
 system/bin/aee_core_forwarder
@@ -136,6 +177,7 @@ system/bin/boot_logo_updater
 system/bin/sbchk
 system/bin/guiext-server
 system/bin/em_svr
+system/lib/libem_support_jni.so
 
 system/lib/libmtk_mmutils.so
 system/lib/libaudiodcrflt.so
@@ -151,31 +193,21 @@ system/lib/libMtkOmxRawDec.so
 system/lib/libMtkOmxGsmDec.so
 system/lib/libMtkOmxAdpcmDec.so
 system/lib/libdrmmtkwhitelist.so
-system/lib/libbluetoothdrv.so
+system/bin/MtkCodecService
+system/lib/libBnMtkCodec.so
+system/lib/libmpodecoder.so
+system/lib/libdrmdecrypt.so
+system/lib/libsbccodec.so
 system/lib/libwapi.so
 
-# added 2016/10/07
-system/lib/hw/lights.default.so
-system/lib/hw/gps.default.so
-
-# added 2016/10/08 - removed 2016/10/18
-#system/etc/factory.ini # not needed, commented 2016/10/08
-#system/bin/logwrapper
-#system/bin/ipod
-
-# added 2016/10/18
-system/bin/factory
-
+system/lib/libbluetoothdrv.so
 
 # gps
-system/lib/libcurl.so
+#system/lib/libcurl.so
 system/lib/libmnl.so
 system/xbin/mnld
 
 # Vendor
-# TODO : remove Ds and DSUI => removed 2016/10/18
-#system/vendor/app/Ds/Ds.apk
-#system/vendor/app/DsUI/DsUI.apk
 system/vendor/lib/hw/audio.a2dp.blueangel.so
 system/vendor/lib/hw/bluetooth.blueangel.so
 system/vendor/lib/libstagefright_soft_ddpdec.so
@@ -185,12 +217,20 @@ system/vendor/media/PFFprec_600.emd
 system/vendor/lib/libwvdrm_L3.so
 system/vendor/lib/libwvm.so
 system/vendor/lib/libWVStreamControlAPI_L3.so
-system/vendor/lib/mediadrm/libmockdrmcryptoplugin.so
+#system/vendor/lib/mediadrm/libmockdrmcryptoplugin.so
 #system/vendor/lib/mediadrm/libplayreadydrmplugin.so
 system/vendor/lib/mediadrm/libwvdrmengine.so
+system/vendor/lib/drm/libdrmwvmplugin.so
 
-# 2016/10/17 Fix charging animation
+# misc
+system/lib/libui_ext.so
+system/lib/libperfservicenative.so
+
+# Related to charging animation
 system/lib/libshowlogo.so
+system/bin/factory
+system/etc/factory.ini
+system/bin/ipod
 
 # 2016/10/17 FM radio. partial and may not be needed. Commented for now
 #system/lib/libfmmt6628.so
@@ -198,7 +238,6 @@ system/lib/libshowlogo.so
 #system/lib/libfmjni.so
 #system/lib/libfmcust.so
 #system/lib/libfmmt6620.so
-
 
 # Firmware
 system/etc/firmware/ROMv2_patch_1_0_hdr.bin
@@ -219,24 +258,11 @@ system/etc/firmware/mt6627/mt6627_fm_v5_patch.bin
 
 
 # config files
-system/etc/wifi/p2p_supplicant_overlay.conf
-system/etc/wifi/wpa_supplicant.conf
-system/etc/wifi/wpa_supplicant_overlay.conf
 system/etc/mtk_omx_core.cfg
 system/etc/fmr/mt6627_fm_cust.cfg
-system/etc/audio_policy.conf
 system/etc/mtklog-config.prop
-system/etc/mtk_omx_core.cfg
-system/etc/bluetooth/btconfig.xml
-system/etc/bluetooth/auto_pair_devlist.conf
-system/vendor/etc/audio_effects.conf
-system/vendor/etc/dolby/ds1-default.xml
 system/etc/.tp/thermal.conf
 system/etc/.tp/thermal.off.conf
-system/etc/bluetooth/bt_did.conf
-system/etc/bluetooth/bt_stack.conf
-#system/etc/media_codecs.xml    # removed 2016/10/18, do not use as blob
-
 
 
 ### PPP/RIL/... stock blobs, try it later, commented for now ==> to be checked ! TODO
