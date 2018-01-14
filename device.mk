@@ -91,6 +91,7 @@ PRODUCT_COPY_FILES += \
 # media codecs files that are not copied from stock rom
 PRODUCT_COPY_FILES += \
 	$(DEVICE_DIR)/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    $(DEVICE_DIR)/configs/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml \
 	$(DEVICE_DIR)/configs/media_profiles.xml:system/etc/media_profiles.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
@@ -147,4 +148,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
 
 # call hwui memory config		
-$(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
+###$(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
+
