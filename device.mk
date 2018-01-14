@@ -135,6 +135,55 @@ PRODUCT_PACKAGES += \
     ebtables \
     ethertypes
 
+
+####
+# libion
+#PRODUCT_PACKAGES += \
+        libion
+
+# libgralloc_extra
+#PRODUCT_PACKAGES += \
+        libgralloc_extra
+
+# audio
+#PRODUCT_PACKAGES += \
+        audio_policy.stub \
+        audio.r_submix.default \
+        audio.usb.default \
+        libaudio-resampler \
+	audio.primary.default \
+	audio_policy.default \
+	audio_policy.stub \
+	
+	
+# cam
+#PRODUCT_PACKAGES += \
+        libcameraanalyzer
+
+
+#PRODUCT_PACKAGES += \
+	gralloc.default \
+	keystore.default \
+	local_time.default \
+	power.default \
+	vibrator.default \
+	libcurl
+
+#system/lib/hw/audio.primary.default.so
+#system/lib/hw/audio_policy.default.so
+#system/lib/hw/audio_policy.stub.so
+#system/lib/hw/gralloc.default.so
+#system/lib/hw/keystore.default.so
+#system/lib/hw/local_time.default.so
+#system/lib/hw/power.default.so
+#system/lib/hw/vibrator.default.so
+#system/lib/libcurl.so
+
+####
+
+
+
+
 # root access
 PRODUCT_PACKAGES += \
 	su
