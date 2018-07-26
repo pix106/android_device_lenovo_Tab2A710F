@@ -14,10 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 # Modified by pix106
 # 2016/01/11 : use a local dump system dir instead of adb pull
 # 2017/06/05 : add vendor, device and proprietary filelist args
+# 2018/07/26 : add vendor_dir to args - use full script path for CI/CD
 
 # Check args #
 if [ $# -lt 3 ] ;
