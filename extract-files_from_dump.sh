@@ -14,41 +14,48 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Modified by pix106 - 2016/01/11
-# use a local dump system dir instead of adb pull
 
-VENDOR=lenovo
-DEVICE=Tab2A710F
+# Modified by pix106
+# 2016/01/11 : use a local dump system dir instead of adb pull
+# 2017/06/05 : add vendor, device and proprietary filelist args
 
-# path to stock system dump
-if ! [ $# -eq 1 ] ;
+# Check args #
+if [ $# -lt 3 ] ;
 then
         echo ""
-        echo "ERROR : Missing required system_dump_dir"
-        echo "Usage: $0 system_dump_dir"
+        echo "Usage: $0 vendor device system_dump_dir vendor_dir proprietary-files.txt"
         echo ""
         exit 1
-else
-        dump_dir="$1"
 fi
 
-mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary
+VENDOR="$1"
+DEVICE="$2"
+dump_dir="$3"
+vendor_dir="$4"
+proprietary_files="$5"
+
+script_path="$( cd "$(dirname "$0")" ; pwd -P )"
+proprietary_files_full_path="$script_path/$proprietary_files"
+
+mkdir -p $vendor_dir/proprietary
 
 #adb root
 #adb wait-for-device
 
-echo "Copying proprietary files from $dump_dir..."
-for FILE in `cat proprietary-files.txt | grep -v ^# | grep -v ^$`; do
+echo "Copying proprietary files for $VENDOR/$DEVICE from $dump_dir to $vendor_dir using $proprietary_files_full_path filelist"
+echo ""
+
+for FILE in `cat "$proprietary_files_full_path" | grep -v ^# | grep -v ^$`; do
     DIR=`dirname $FILE`
-    if [ ! -d ../../../vendor/$VENDOR/$DEVICE/proprietary/$DIR ]; then
-        mkdir -p ../../../vendor/$VENDOR/$DEVICE/proprietary/$DIR
+    if [ ! -d $vendor_dir/proprietary/$DIR ]; then
+        mkdir -p $vendor_dir/proprietary/$DIR
     fi
-    #adb pull /$FILE ../../../vendor/$VENDOR/$DEVICE/proprietary/$FILE
-    cp -v $dump_dir/$FILE ../../../vendor/$VENDOR/$DEVICE/proprietary/$FILE
+    #adb pull /$FILE $vendor_dir/proprietary/$FILE
+    cp -v $dump_dir/$FILE $vendor_dir/proprietary/$FILE
 done
 
 
-(cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__VENDOR__/$VENDOR/g > ../../../vendor/$VENDOR/$DEVICE/$DEVICE-vendor-blobs.mk
+(cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__VENDOR__/$VENDOR/g > $vendor_dir/$DEVICE-vendor-blobs.mk
 # Copyright (C) 2013 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -69,16 +76,16 @@ PRODUCT_COPY_FILES += \\
 EOF
 
 LINEEND=" \\"
-COUNT=`cat proprietary-files.txt | grep -v ^# | grep -v ^$ | wc -l | awk {'print $1'}`
-for FILE in `cat proprietary-files.txt | grep -v ^# | grep -v ^$`; do
+COUNT=`cat "$proprietary_files_full_path" | grep -v ^# | grep -v ^$ | wc -l | awk {'print $1'}`
+for FILE in `cat "$proprietary_files_full_path" | grep -v ^# | grep -v ^$`; do
     COUNT=`expr $COUNT - 1`
     if [ $COUNT = "0" ]; then
         LINEEND=""
     fi
-    echo "    \$(LOCAL_PATH)/proprietary/$FILE:$FILE$LINEEND" >> ../../../vendor/$VENDOR/$DEVICE/$DEVICE-vendor-blobs.mk
+    echo "    \$(LOCAL_PATH)/proprietary/$FILE:$FILE$LINEEND" >> $vendor_dir/$DEVICE-vendor-blobs.mk
 done
 
-(cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__VENDOR__/$VENDOR/g > ../../../vendor/$VENDOR/$DEVICE/$DEVICE-vendor.mk
+(cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__VENDOR__/$VENDOR/g > $vendor_dir/$DEVICE-vendor.mk
 # Copyright (C) 2013 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -99,7 +106,7 @@ DEVICE_PACKAGE_OVERLAYS += vendor/__VENDOR__/__DEVICE__/overlay
 \$(call inherit-product, vendor/__VENDOR__/__DEVICE__/__DEVICE__-vendor-blobs.mk)
 EOF
 
-(cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__VENDOR__/$VENDOR/g > ../../../vendor/$VENDOR/$DEVICE/BoardConfigVendor.mk
+(cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__VENDOR__/$VENDOR/g > $vendor_dir/BoardConfigVendor.mk
 # Copyright (C) 2013 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -115,4 +122,3 @@ EOF
 # limitations under the License.
 
 EOF
-
