@@ -12,17 +12,4 @@ Storage | 8GB
 Display | 7" 1024 x 600 px
 Camera  | VGA (Front-Facing)
 
-# Build
-
-
-Not Working
-
-* HWC has issues
-* Video streaming (Youtube live...)
-* Video recording with stock camera app (works using some other apps)
-* FM Radio
-
-
-Working
-
-* Everything else
+WIP branch
